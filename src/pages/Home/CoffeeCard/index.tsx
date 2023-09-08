@@ -1,4 +1,4 @@
-import { TextM, TitleM, TitleS, TitleXL } from '../../../styles/typography'
+import { TextM, TitleM, TitleXL } from '../../../styles/typography'
 import { CoffeeCardContainer, TagContainer } from './styles'
 
 interface CoffeeCardProps {
