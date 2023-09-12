@@ -13,7 +13,7 @@ export const TitleL = styled(TitleXL)`
   color: ${(props) => props.theme.baseSubtitle};
 `
 
-export const TitleM = styled(TitleXL)`
+export const TitleM = styled(TitleL)`
   font-size: 1.5rem;
 `
 
@@ -31,7 +31,7 @@ export const TextL = styled.p`
   font-family: 'Roboto', sans-serif;
   font-size: 1.25rem;
   line-height: 130%;
-  color: ${(props) => props.theme.baseText};
+  color: ${(props) => props.theme.baseLabel};
 `
 
 export const TextM = styled(TextL)`

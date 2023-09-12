@@ -9,7 +9,7 @@ import {
 export function Header() {
   return (
     <HeaderContainer>
-      <img src="/src/assets/logo.svg" alt="logo" />
+      <img src="/logo.svg" alt="logo" />
       <RightButtonsContainer>
         <LocationButton type="button">
           <MapPin size={24} weight="fill" />

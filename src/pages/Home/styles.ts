@@ -53,6 +53,6 @@ export const CoffeeListContainer = styled.div`
 export const CoffeeList = styled.div`
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 0.5fr));
+  grid-template-columns: repeat(auto-fill, minmax(14.8rem, 0.5fr));
   justify-content: center;
 `

@@ -18,42 +18,42 @@ const coffees = [
   {
     name: 'Expresso Tradicional',
     description: 'O tradicional café feito com água quente e grãos moídos',
-    img: '/src/assets/coffees/expresso.svg',
+    img: '/coffees/expresso.svg',
     price: 9.9,
     tags: ['tradicional'],
   },
   {
     name: 'Expresso Americano',
     description: 'Expresso diluído, menos intenso que o tradicional',
-    img: '/src/assets/coffees/americano.svg',
+    img: '../../coffees/americano.svg',
     price: 11,
     tags: ['tradicional'],
   },
   {
     name: 'Expresso Cremoso',
     description: 'Expresso com um pouco de leite vaporizado',
-    img: '/src/assets/coffees/cremoso.svg',
+    img: '../../coffees/cremoso.svg',
     price: 12,
     tags: ['tradicional'],
   },
   {
     name: 'Expresso Gelado',
     description: 'Expresso com gelo e um pouco de leite vaporizado',
-    img: '/src/assets/coffees/gelado.svg',
+    img: '../../coffees/gelado.svg',
     price: 12,
     tags: ['tradicional', 'gelado'],
   },
   {
     name: 'Café com Leite',
     description: 'Café com leite vaporizado',
-    img: '/src/assets/coffees/com-leite.svg',
+    img: '../../coffees/com-leite.svg',
     price: 12,
     tags: ['tradicional', 'com leite'],
   },
   {
     name: 'Latte',
     description: 'Café com leite vaporizado e espuma de leite',
-    img: '/src/assets/coffees/latte.svg',
+    img: '../../coffees/latte.svg',
     price: 12,
     tags: ['tradicional', 'com leite'],
   },
@@ -97,7 +97,7 @@ export function Home() {
             </Quality>
           </IntroInfoQualitiesContainer>
         </IntroInfoContainer>
-        <IntroImage src="/src/assets/intro-image.png" alt="coffee image" />
+        <IntroImage src="/intro-image.png" alt="coffee image" />
       </IntroContainer>
 
       <CoffeeListContainer>
