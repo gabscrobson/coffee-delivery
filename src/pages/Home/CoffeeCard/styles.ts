@@ -27,3 +27,15 @@ export const TagContainer = styled.div`
   width: fit-content;
   margin: 0.25rem;
 `
+
+export const CardFooterContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    align-items: baseline;
+    gap: 0.2rem;
+  }
+`

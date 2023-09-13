@@ -38,6 +38,11 @@ export const TextM = styled(TextL)`
   font-size: 1rem;
 `
 
+export const TextM2 = styled(TextM)`
+  font-size: 1.125rem;
+  color: ${(props) => props.theme.baseSubtitle};
+`
+
 export const TextS = styled(TextL)`
   font-size: 0.875rem;
 `

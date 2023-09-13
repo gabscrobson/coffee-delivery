@@ -1,5 +1,9 @@
-import { TextM, TitleM, TitleXL } from '../../../styles/typography'
-import { CoffeeCardContainer, TagContainer } from './styles'
+import { TextM, TextM2, TitleL, TitleM } from '../../../styles/typography'
+import {
+  CardFooterContainer,
+  CoffeeCardContainer,
+  TagContainer,
+} from './styles'
 
 interface CoffeeCardProps {
   img: string
@@ -26,7 +30,17 @@ export function CoffeeCard({
       </div>
       <TitleM>{name}</TitleM>
       <TextM>{description}</TextM>
-      <TitleXL>R$ {price}</TitleXL>
+      <CardFooterContainer>
+        <div>
+          <TextM2>R$</TextM2>
+          <TitleL>
+            {price.toLocaleString('pt-BR', {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
+          </TitleL>
+        </div>
+      </CardFooterContainer>
     </CoffeeCardContainer>
   )
 }

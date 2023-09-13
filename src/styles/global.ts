@@ -18,4 +18,11 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
     -webkit-font-smoothing: antialiased;
   }
+
+  // lower font size on small devices
+  @media (max-width: 800px) {
+    html {
+      font-size: 90%; // 14px
+    }
+  }
 `
