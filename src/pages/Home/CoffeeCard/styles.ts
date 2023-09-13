@@ -11,6 +11,7 @@ export const CoffeeCardContainer = styled.div`
   justify-content: space-between;
   text-align: center;
   padding: 1rem;
+  margin-bottom: 1rem;
 
   img {
     margin-top: -2.5rem;
