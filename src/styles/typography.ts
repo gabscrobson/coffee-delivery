@@ -41,6 +41,7 @@ export const TextM = styled(TextL)`
 export const TextM2 = styled(TextM)`
   font-size: 1.125rem;
   color: ${(props) => props.theme.baseSubtitle};
+  font-weight: lighter;
 `
 
 export const TextS = styled(TextL)`

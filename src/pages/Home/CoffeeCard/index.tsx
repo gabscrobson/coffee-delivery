@@ -1,7 +1,11 @@
+import { ShoppingCart } from 'phosphor-react'
+import { QuantityInput } from '../../../components/QuantityInput'
 import { TextM, TextM2, TitleL, TitleM } from '../../../styles/typography'
 import {
+  AddToCartContainer,
   CardFooterContainer,
   CoffeeCardContainer,
+  PriceContainer,
   TagContainer,
 } from './styles'
 
@@ -31,7 +35,7 @@ export function CoffeeCard({
       <TitleM>{name}</TitleM>
       <TextM>{description}</TextM>
       <CardFooterContainer>
-        <div>
+        <PriceContainer>
           <TextM2>R$</TextM2>
           <TitleL>
             {price.toLocaleString('pt-BR', {
@@ -39,7 +43,13 @@ export function CoffeeCard({
               maximumFractionDigits: 2,
             })}
           </TitleL>
-        </div>
+        </PriceContainer>
+        <AddToCartContainer>
+          <QuantityInput />
+          <button>
+            <ShoppingCart size={22} weight="fill" />
+          </button>
+        </AddToCartContainer>
       </CardFooterContainer>
     </CoffeeCardContainer>
   )

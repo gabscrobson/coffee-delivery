@@ -47,7 +47,7 @@ export const IntroImage = styled.img`
 export const CoffeeListContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 `
 
 export const CoffeeList = styled.div`
