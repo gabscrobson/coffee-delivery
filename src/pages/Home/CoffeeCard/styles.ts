@@ -46,10 +46,11 @@ export const PriceContainer = styled.div`
 
 export const AddToCartContainer = styled.div`
   flex: 1;
-  max-width: 7.5rem;
+  max-width: 9rem;
   display: flex;
   align-items: center;
-  gap: 0.3rem;
+  justify-content: flex-end;
+  gap: 0.4rem;
 
   > button {
     width: 2.75rem;

@@ -2,6 +2,7 @@ import { styled } from 'styled-components'
 
 export const QuantityInputContainer = styled.div`
   flex: 1;
+  max-width: 5rem;
   background: ${(props) => props.theme.baseButton};
   display: flex;
   align-items: center;
@@ -21,5 +22,17 @@ export const QuantityInputContainer = styled.div`
     &:focus {
       outline: none;
     }
+  }
+`
+
+export const IconContainer = styled.button.attrs({ type: 'button' })`
+  background: none;
+  border: none;
+  color: ${(props) => props.theme.purple};
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    color: ${(props) => props.theme.purpleDark};
   }
 `
