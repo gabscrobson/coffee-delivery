@@ -16,7 +16,7 @@ export const RightButtonsContainer = styled.div`
   gap: 1rem;
 `
 
-const BaseRightButton = styled.button`
+const BaseRightButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
