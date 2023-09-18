@@ -13,51 +13,7 @@ import {
   IntroInfoTextContainer,
 } from './styles'
 import { Clock, Coffee, Package, ShoppingCart } from 'phosphor-react'
-
-const coffees = [
-  {
-    name: 'Expresso Tradicional',
-    description: 'O tradicional café feito com água quente e grãos moídos',
-    img: '/coffees/expresso.svg',
-    price: 9.9,
-    tags: ['tradicional'],
-  },
-  {
-    name: 'Expresso Americano',
-    description: 'Expresso diluído, menos intenso que o tradicional',
-    img: '../../coffees/americano.svg',
-    price: 11,
-    tags: ['tradicional'],
-  },
-  {
-    name: 'Expresso Cremoso',
-    description: 'Expresso com um pouco de leite vaporizado',
-    img: '../../coffees/cremoso.svg',
-    price: 12,
-    tags: ['tradicional'],
-  },
-  {
-    name: 'Expresso Gelado',
-    description: 'Expresso com gelo e um pouco de leite vaporizado',
-    img: '../../coffees/gelado.svg',
-    price: 12,
-    tags: ['tradicional', 'gelado'],
-  },
-  {
-    name: 'Café com Leite',
-    description: 'Café com leite vaporizado',
-    img: '../../coffees/com-leite.svg',
-    price: 12,
-    tags: ['tradicional', 'com leite'],
-  },
-  {
-    name: 'Latte',
-    description: 'Café com leite vaporizado e espuma de leite',
-    img: '../../coffees/latte.svg',
-    price: 12,
-    tags: ['tradicional', 'com leite'],
-  },
-]
+import { coffees } from '../../data/coffees'
 
 export function Home() {
   return (
@@ -105,10 +61,10 @@ export function Home() {
         <CoffeeList>
           {coffees.map((coffee) => (
             <CoffeeCard
-              key={coffee.name}
+              key={coffee.id}
               name={coffee.name}
               description={coffee.description}
-              img={coffee.img}
+              img={'/coffees/' + coffee.photo}
               price={coffee.price}
               tags={coffee.tags}
             />

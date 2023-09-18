@@ -1,4 +1,4 @@
-import { CurrencyDollar, MapPin } from 'phosphor-react'
+import { Bank, CreditCard, CurrencyDollar, MapPin, Money } from 'phosphor-react'
 import { TextM, TextM2, TitleM } from '../../styles/typography'
 import {
   CartCoffeeListContainer,
@@ -7,10 +7,12 @@ import {
   LeftCartContainer,
   PaymentOptionsContainer,
   RightCartContainer,
+  TextInput,
 } from './styles'
 import { defaultTheme } from '../../styles/themes/default'
 import { CartCoffeeCard } from './CartCoffeeCard'
 import { Payment } from './Payment'
+import { coffees } from '../../data/coffees'
 
 export function Cart() {
   return (
@@ -27,6 +29,15 @@ export function Cart() {
               </TextM>
             </div>
           </FormHeader>
+          <div>
+            <TextInput type="text" maxWidth={12.5} placeholder="CEP" />
+            <TextInput type="text" placeholder="Rua" />
+            <TextInput type="text" maxWidth={12.5} placeholder="Número" />
+            <TextInput type="text" maxWidth={15} placeholder="Complemento" />
+            <TextInput type="text" maxWidth={12.5} placeholder="Bairro" />
+            <TextInput type="text" maxWidth={15} placeholder="Cidade" />
+            <TextInput type="text" maxWidth={5} placeholder="UF" />
+          </div>
         </div>
         <div>
           <FormHeader>
@@ -39,9 +50,18 @@ export function Cart() {
             </div>
           </FormHeader>
           <PaymentOptionsContainer>
-            <Payment />
-            <Payment />
-            <Payment />
+            <Payment
+              method="CARTÃO DE CRÉDITO"
+              icon={<CreditCard size={23} color={defaultTheme.purple} />}
+            />
+            <Payment
+              method="CARTÃO DE DÉBITO"
+              icon={<Bank size={23} color={defaultTheme.purple} />}
+            />
+            <Payment
+              method="DINHEIRO"
+              icon={<Money size={23} color={defaultTheme.purple} />}
+            />
           </PaymentOptionsContainer>
         </div>
       </LeftCartContainer>
@@ -49,10 +69,10 @@ export function Cart() {
         <TitleM>Cafés selecionados</TitleM>
         <div>
           <CartCoffeeListContainer>
-            <CartCoffeeCard />
-            <CartCoffeeCard />
-            <CartCoffeeCard />
-            <CartCoffeeCard />
+            <CartCoffeeCard img={coffees.} />
+            <CartCoffeeCard img={} />
+            <CartCoffeeCard img={} />
+            <CartCoffeeCard img={} />
           </CartCoffeeListContainer>
         </div>
       </RightCartContainer>

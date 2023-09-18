@@ -1,12 +1,16 @@
-import { CreditCard } from 'phosphor-react'
 import { TextM3 } from '../../../styles/typography'
 import { PaymentContainer } from './styles'
 
-export function Payment() {
+interface PaymentProps {
+  method: string
+  icon: JSX.Element
+}
+
+export function Payment({ method, icon }: PaymentProps) {
   return (
     <PaymentContainer>
-      <CreditCard size={24} weight="fill" />
-      <TextM3>CARTÃO DE CRÉDITO</TextM3>
+      {icon}
+      <TextM3>{method}</TextM3>
     </PaymentContainer>
   )
 }

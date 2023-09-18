@@ -1,7 +1,14 @@
-export function CartCoffeeCard() {
+import { CartCoffeeCardContainer } from './styles'
+
+interface CartCoffeeCardProps {
+  name: string
+  img: string
+}
+
+export function CartCoffeeCard({ name, img }: CartCoffeeCardProps) {
   return (
-    <div>
-      <p>teste</p>
-    </div>
+    <CartCoffeeCardContainer>
+      <img src={img} alt={name} />
+    </CartCoffeeCardContainer>
   )
 }

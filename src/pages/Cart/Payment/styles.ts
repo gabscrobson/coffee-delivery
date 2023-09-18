@@ -3,8 +3,9 @@ import { styled } from 'styled-components'
 export const PaymentContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 1.2rem;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
   background: ${(props) => props.theme.baseButton};
   border-radius: 6px;
   color: ${(props) => props.theme.baseSubtitle};
