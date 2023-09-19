@@ -12,7 +12,21 @@ import {
 import { defaultTheme } from '../../styles/themes/default'
 import { CartCoffeeCard } from './CartCoffeeCard'
 import { Payment } from './Payment'
-import { coffees } from '../../data/coffees'
+
+export const paymentMethods = {
+  credit: {
+    label: 'Cartão de crédito',
+    icon: <CreditCard size={16} color={defaultTheme.purple} />,
+  },
+  debit: {
+    label: 'Cartão de débito',
+    icon: <Bank size={16} color={defaultTheme.purple} />,
+  },
+  money: {
+    label: 'Dinheiro',
+    icon: <Money size={16} color={defaultTheme.purple} />,
+  },
+}
 
 export function Cart() {
   return (
@@ -51,16 +65,19 @@ export function Cart() {
           </FormHeader>
           <PaymentOptionsContainer>
             <Payment
-              method="CARTÃO DE CRÉDITO"
-              icon={<CreditCard size={23} color={defaultTheme.purple} />}
+              id="credit"
+              method={paymentMethods.credit.label}
+              icon={paymentMethods.credit.icon}
             />
             <Payment
-              method="CARTÃO DE DÉBITO"
-              icon={<Bank size={23} color={defaultTheme.purple} />}
+              id="debit"
+              method={paymentMethods.debit.label}
+              icon={paymentMethods.debit.icon}
             />
             <Payment
-              method="DINHEIRO"
-              icon={<Money size={23} color={defaultTheme.purple} />}
+              id="money"
+              method={paymentMethods.money.label}
+              icon={paymentMethods.money.icon}
             />
           </PaymentOptionsContainer>
         </div>
@@ -69,10 +86,22 @@ export function Cart() {
         <TitleM>Cafés selecionados</TitleM>
         <div>
           <CartCoffeeListContainer>
-            <CartCoffeeCard img={coffees.} />
-            <CartCoffeeCard img={} />
-            <CartCoffeeCard img={} />
-            <CartCoffeeCard img={} />
+            <CartCoffeeCard
+              name="americano"
+              img={'/coffees/' + 'americano.svg'}
+            />
+            <CartCoffeeCard
+              name="americano"
+              img={'/coffees/' + 'americano.svg'}
+            />
+            <CartCoffeeCard
+              name="americano"
+              img={'/coffees/' + 'americano.svg'}
+            />
+            <CartCoffeeCard
+              name="americano"
+              img={'/coffees/' + 'americano.svg'}
+            />
           </CartCoffeeListContainer>
         </div>
       </RightCartContainer>
