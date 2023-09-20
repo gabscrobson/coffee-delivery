@@ -1,8 +1,9 @@
 import { Bank, CreditCard, CurrencyDollar, MapPin, Money } from 'phosphor-react'
-import { TextM, TextM2, TitleM } from '../../styles/typography'
+import { TextM, TextM2, TitleL, TitleM, TitleM2 } from '../../styles/typography'
 import {
   CartCoffeeListContainer,
-  CartContainer,
+  CartForm,
+  ConfirmationContainer,
   FormHeader,
   LeftCartContainer,
   PaymentOptionsContainer,
@@ -30,7 +31,7 @@ export const paymentMethods = {
 
 export function Cart() {
   return (
-    <CartContainer>
+    <CartForm>
       <LeftCartContainer>
         <TitleM>Complete seu pedido</TitleM>
         <div>
@@ -87,24 +88,43 @@ export function Cart() {
         <div>
           <CartCoffeeListContainer>
             <CartCoffeeCard
-              name="americano"
+              name="Expresso Americano"
               img={'/coffees/' + 'americano.svg'}
+              price={9.9}
             />
             <CartCoffeeCard
-              name="americano"
+              name="Expresso Americano"
               img={'/coffees/' + 'americano.svg'}
+              price={9.9}
             />
             <CartCoffeeCard
-              name="americano"
+              name="Expresso Americano"
               img={'/coffees/' + 'americano.svg'}
+              price={9.9}
             />
             <CartCoffeeCard
-              name="americano"
+              name="Expresso Americano"
               img={'/coffees/' + 'americano.svg'}
+              price={9.9}
             />
           </CartCoffeeListContainer>
+          <ConfirmationContainer>
+            <div>
+              <TextM2>Subtotal</TextM2>
+              <TextM2>R$ x</TextM2>
+            </div>
+            <div>
+              <TextM2>Entrega</TextM2>
+              <TextM2>R$ 3,50</TextM2>
+            </div>
+            <div>
+              <TitleM2>Total</TitleM2>
+              <TitleM2>R$ x</TitleM2>
+            </div>
+            <button type="submit">CONFIRMAR PEDIDO</button>
+          </ConfirmationContainer>
         </div>
       </RightCartContainer>
-    </CartContainer>
+    </CartForm>
   )
 }

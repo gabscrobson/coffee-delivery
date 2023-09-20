@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 
-export const CartContainer = styled.div`
+export const CartForm = styled.form`
   display: flex;
   justify-content: space-between;
   align-items: top;
@@ -28,9 +28,9 @@ export const RightCartContainer = styled.div`
 
   > div {
     background: ${(props) => props.theme.baseCard};
-    border-radius: 0 25px;
+    border-radius: 6px 25px;
     width: 100%;
-    padding: 2rem;
+    padding: 3rem;
   }
 `
 
@@ -78,4 +78,37 @@ export const PaymentOptionsContainer = styled.div`
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   justify-content: center;
+`
+
+export const ConfirmationContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: center;
+  margin-top: 2rem;
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  > button {
+    width: 100%;
+    border-radius: 6px;
+    padding: 1.3rem 1rem;
+    background: ${(props) => props.theme.yellow};
+    color: ${(props) => props.theme.white};
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+
+    &:hover {
+      background: ${(props) => props.theme.yellowDark};
+    }
+  }
 `

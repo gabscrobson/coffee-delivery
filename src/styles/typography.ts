@@ -17,6 +17,10 @@ export const TitleM = styled(TitleL)`
   font-size: 1.5rem;
 `
 
+export const TitleM2 = styled(TitleM)`
+  font-size: 1.75rem;
+`
+
 export const TitleS = styled(TitleXL)`
   font-size: 1.25rem;
   font-weight: bold;
