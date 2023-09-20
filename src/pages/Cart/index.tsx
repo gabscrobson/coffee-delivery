@@ -1,5 +1,5 @@
 import { Bank, CreditCard, CurrencyDollar, MapPin, Money } from 'phosphor-react'
-import { TextM, TextM2, TitleL, TitleM, TitleM2 } from '../../styles/typography'
+import { TextM, TextM2, TitleM, TitleM2 } from '../../styles/typography'
 import {
   CartCoffeeListContainer,
   CartForm,
