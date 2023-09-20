@@ -1,16 +1,16 @@
 import { Minus, Plus } from 'phosphor-react'
-import { IconContainer, QuantityInputContainer } from './styles'
+import { IconWrapper, QuantityInputContainer } from './styles'
 
 export function QuantityInput() {
   return (
     <QuantityInputContainer>
-      <IconContainer>
+      <IconWrapper>
         <Minus size={16} weight="fill" />
-      </IconContainer>
+      </IconWrapper>
       <input type="number" value={1} />
-      <IconContainer>
+      <IconWrapper>
         <Plus size={16} weight="fill" />
-      </IconContainer>
+      </IconWrapper>
     </QuantityInputContainer>
   )
 }

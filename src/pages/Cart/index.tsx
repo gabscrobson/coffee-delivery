@@ -17,15 +17,15 @@ import { Payment } from './Payment'
 export const paymentMethods = {
   credit: {
     label: 'Cartão de crédito',
-    icon: <CreditCard size={16} color={defaultTheme.purple} />,
+    icon: <CreditCard size={22} color={defaultTheme.purple} />,
   },
   debit: {
     label: 'Cartão de débito',
-    icon: <Bank size={16} color={defaultTheme.purple} />,
+    icon: <Bank size={22} color={defaultTheme.purple} />,
   },
   money: {
     label: 'Dinheiro',
-    icon: <Money size={16} color={defaultTheme.purple} />,
+    icon: <Money size={22} color={defaultTheme.purple} />,
   },
 }
 

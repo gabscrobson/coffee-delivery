@@ -1,8 +1,24 @@
 import { styled } from 'styled-components'
 
-export const HeaderContainer = styled.header`
+export const HeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
   width: 100%;
-  margin-bottom: 4rem;
+  padding: 1rem;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  background-color: ${(props) => props.theme.white};
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+`
+
+export const HeaderContent = styled.header`
+  width: 90%;
+  max-width: 1500px;
+  margin: auto;
 
   display: flex;
   align-items: center;
@@ -20,7 +36,7 @@ const BaseRightButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.1rem;
+  gap: 0.2rem;
 
   border: none;
   border-radius: 0.5rem;
@@ -36,6 +52,10 @@ const BaseRightButton = styled.div`
 
   &:hover {
     filter: brightness(0.95);
+  }
+
+  > svg {
+    margin-top: -0.05rem;
   }
 `
 

@@ -25,7 +25,7 @@ export const QuantityInputContainer = styled.div`
   }
 `
 
-export const IconContainer = styled.button.attrs({ type: 'button' })`
+export const IconWrapper = styled.button.attrs({ type: 'button' })`
   background: none;
   border: none;
   color: ${(props) => props.theme.purple};
