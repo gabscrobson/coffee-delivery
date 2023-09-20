@@ -54,6 +54,12 @@ export const TextInput = styled.input<TextInputProps>`
   margin: 0 1rem 1rem 0;
   width: 100%;
   max-width: ${(props) => (props.maxWidth ? `${props.maxWidth}rem` : '')};
+  transition: 0.2s;
+  outline: none;
+
+  &:focus {
+    border: 2px solid ${(props) => props.theme.yellow};
+  }
 `
 
 export const FormHeader = styled.div`

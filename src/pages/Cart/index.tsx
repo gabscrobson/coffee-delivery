@@ -93,18 +93,8 @@ export function Cart() {
               price={9.9}
             />
             <CartCoffeeCard
-              name="Expresso Americano"
-              img={'/coffees/' + 'americano.svg'}
-              price={9.9}
-            />
-            <CartCoffeeCard
-              name="Expresso Americano"
-              img={'/coffees/' + 'americano.svg'}
-              price={9.9}
-            />
-            <CartCoffeeCard
-              name="Expresso Americano"
-              img={'/coffees/' + 'americano.svg'}
+              name="Café com leite"
+              img={'/coffees/' + 'com-leite.svg'}
               price={9.9}
             />
           </CartCoffeeListContainer>

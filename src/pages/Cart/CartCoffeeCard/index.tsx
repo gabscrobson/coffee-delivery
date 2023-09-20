@@ -1,8 +1,10 @@
+import { Trash } from 'phosphor-react'
 import { QuantityInput } from '../../../components/QuantityInput'
 import {
   ButtonsContainer,
   CartCoffeeCardContainer,
   LeftContainer,
+  RemoveButton,
   RightContainer,
 } from './styles'
 
@@ -21,6 +23,10 @@ export function CartCoffeeCard({ name, img, price }: CartCoffeeCardProps) {
           <p>{name}</p>
           <ButtonsContainer>
             <QuantityInput />
+            <RemoveButton>
+              <Trash size={20} />
+              Remover
+            </RemoveButton>
           </ButtonsContainer>
         </div>
       </LeftContainer>

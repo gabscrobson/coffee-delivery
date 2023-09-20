@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import { DefaultLayout } from './layouts/DefaultLayout'
 import { Home } from './pages/Home'
 import { Cart } from './pages/Cart'
+import { Sucess } from './pages/Sucess'
 
 export function Router() {
   return (
@@ -9,6 +10,7 @@ export function Router() {
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/sucess" element={<Sucess />} />
       </Route>
     </Routes>
   )

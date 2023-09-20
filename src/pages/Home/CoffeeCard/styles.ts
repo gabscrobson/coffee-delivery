@@ -59,14 +59,14 @@ export const AddToCartContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: ${(props) => props.theme.purpleDark};
+    background: ${(props) => props.theme.purple};
     color: ${(props) => props.theme.baseCard};
     border-radius: 6px;
     transition: 0.2s;
     cursor: pointer;
 
     &:hover {
-      background: ${(props) => props.theme.purple};
+      background: ${(props) => props.theme.purpleDark};
     }
   }
 `
