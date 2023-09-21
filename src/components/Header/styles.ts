@@ -52,6 +52,10 @@ const BaseRightButton = styled.div`
 
   &:hover {
     filter: brightness(0.95);
+
+    > div {
+      filter: brightness(0.95);
+    }
   }
 
   > svg {
@@ -67,4 +71,24 @@ export const LocationButton = styled(BaseRightButton)`
 export const CartButton = styled(BaseRightButton)`
   background-color: ${(props) => props.theme.yellowLight};
   color: ${(props) => props.theme.yellowDark};
+  position: relative;
+`
+
+export const CartQuantity = styled.div`
+  position: absolute;
+  top: calc(-1.25rem / 3);
+  right: calc(-1.25rem / 3);
+
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+
+  background-color: ${(props) => props.theme.yellowDark};
+  color: ${(props) => props.theme.white};
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `

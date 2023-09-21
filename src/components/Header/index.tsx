@@ -1,6 +1,7 @@
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import {
   CartButton,
+  CartQuantity,
   HeaderContainer,
   HeaderContent,
   LocationButton,
@@ -47,6 +48,7 @@ export function Header() {
           </LocationButton>
           <NavLink to="/cart" title="Cart">
             <CartButton>
+              <CartQuantity>2</CartQuantity>
               <ShoppingCart size={24} weight="fill" />
             </CartButton>
           </NavLink>

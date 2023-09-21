@@ -25,7 +25,7 @@ export function CartCoffeeCard({ name, img, price }: CartCoffeeCardProps) {
             <QuantityInput />
             <RemoveButton>
               <Trash size={20} />
-              Remover
+              <span>Remover</span>
             </RemoveButton>
           </ButtonsContainer>
         </div>

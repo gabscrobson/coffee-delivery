@@ -13,6 +13,11 @@ export const TitleL = styled(TitleXL)`
   color: ${(props) => props.theme.baseSubtitle};
 `
 
+export const TitleL2 = styled(TitleL)`
+  font-size: 2.5rem;
+  color: ${(props) => props.theme.yellowDark};
+`
+
 export const TitleM = styled(TitleL)`
   font-size: 1.5rem;
 `

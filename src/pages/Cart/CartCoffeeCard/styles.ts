@@ -72,4 +72,11 @@ export const RemoveButton = styled.button`
   &:hover {
     background: ${(props) => props.theme.purpleDark};
   }
+
+  @media screen and (max-width: 1335px) {
+    padding: 0.5rem 0.5rem;
+    > span {
+      display: none;
+    }
+  }
 `

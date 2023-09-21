@@ -1,7 +1,7 @@
 import { defaultTheme } from '../../styles/themes/default'
 import { TextL, TitleL, TitleXL } from '../../styles/typography'
 import { CoffeeCard } from './CoffeeCard'
-import { Quality } from './Quality'
+import { Quality } from '../../components/Quality'
 import {
   CoffeeList,
   CoffeeListContainer,
@@ -34,22 +34,22 @@ export function Home() {
               icon={<ShoppingCart weight="fill" />}
               color={defaultTheme.yellowDark}
             >
-              Compra simples e segura
+              <TextL>Compra simples e segura</TextL>
             </Quality>
             <Quality
               icon={<Package weight="fill" />}
               color={defaultTheme.baseText}
             >
-              Embalagem mantém o café intacto
+              <TextL>Embalagem mantém o café intacto</TextL>
             </Quality>
             <Quality icon={<Clock weight="fill" />} color={defaultTheme.yellow}>
-              Entrega rápida e rastreada
+              <TextL>Entrega rápida e rastreada</TextL>
             </Quality>
             <Quality
               icon={<Coffee weight="fill" />}
               color={defaultTheme.purple}
             >
-              O café chega fresquinho até você
+              <TextL>O café chega fresquinho até você</TextL>
             </Quality>
           </IntroInfoQualitiesContainer>
         </IntroInfoContainer>
