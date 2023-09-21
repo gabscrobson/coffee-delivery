@@ -9,6 +9,7 @@ import {
 } from './styles'
 import { NavLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { useCart } from '../../hooks/useCart'
 
 export function Header() {
   const [userLocation, setUserLocation] = useState<string>('Carregando...')
@@ -35,6 +36,9 @@ export function Header() {
     )
   }, [])
 
+  const { cartItems } = useCart()
+  const cartItemsQuantity = cartItems.length
+
   return (
     <HeaderContainer>
       <HeaderContent>
@@ -48,7 +52,10 @@ export function Header() {
           </LocationButton>
           <NavLink to="/cart" title="Cart">
             <CartButton>
-              <CartQuantity>2</CartQuantity>
+              {/* <CartQuantity>{}</CartQuantity> */}
+              {cartItemsQuantity > 0 && (
+                <CartQuantity>{cartItemsQuantity}</CartQuantity>
+              )}
               <ShoppingCart size={24} weight="fill" />
             </CartButton>
           </NavLink>

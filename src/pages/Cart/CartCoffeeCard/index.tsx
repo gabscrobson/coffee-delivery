@@ -7,23 +7,47 @@ import {
   RemoveButton,
   RightContainer,
 } from './styles'
+import { CartItem } from '../../../contexts/CartContext'
+import { useCart } from '../../../hooks/useCart'
+import { useState } from 'react'
 
 interface CartCoffeeCardProps {
-  name: string
-  img: string
-  price: number
+  coffee: CartItem
 }
 
-export function CartCoffeeCard({ name, img, price }: CartCoffeeCardProps) {
+export function CartCoffeeCard({ coffee }: CartCoffeeCardProps) {
+  const [quantity, setQuantity] = useState(coffee.quantity)
+  const { changeCoffeeQuantity, removeCoffeeFromCart } = useCart()
+
+  function handleIncreaseQuantity() {
+    setQuantity(quantity + 1)
+    changeCoffeeQuantity(coffee, quantity + 1)
+  }
+
+  function handleDecreaseQuantity() {
+    if (quantity > 1) {
+      setQuantity(quantity - 1)
+      changeCoffeeQuantity(coffee, quantity - 1)
+    }
+  }
+
+  function handleRemoveCoffeeFromCart() {
+    removeCoffeeFromCart(coffee)
+  }
+
   return (
     <CartCoffeeCardContainer>
       <LeftContainer>
-        <img src={img} alt={name} />
+        <img src={`/coffees/${coffee.photo}`} alt={coffee.name} />
         <div>
-          <p>{name}</p>
+          <p>{coffee.name}</p>
           <ButtonsContainer>
-            <QuantityInput />
-            <RemoveButton>
+            <QuantityInput
+              quantity={quantity}
+              onIncrease={handleIncreaseQuantity}
+              onDecrease={handleDecreaseQuantity}
+            />
+            <RemoveButton onClick={handleRemoveCoffeeFromCart}>
               <Trash size={20} />
               <span>Remover</span>
             </RemoveButton>
@@ -33,7 +57,7 @@ export function CartCoffeeCard({ name, img, price }: CartCoffeeCardProps) {
       <RightContainer>
         <p>R$</p>
         <p>
-          {price.toLocaleString('pt-BR', {
+          {coffee.price.toLocaleString('pt-BR', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
           })}

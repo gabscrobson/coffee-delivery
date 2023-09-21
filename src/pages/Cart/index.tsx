@@ -13,6 +13,7 @@ import {
 import { defaultTheme } from '../../styles/themes/default'
 import { CartCoffeeCard } from './CartCoffeeCard'
 import { Payment } from './Payment'
+import { useCart } from '../../hooks/useCart'
 
 export const paymentMethods = {
   credit: {
@@ -30,6 +31,8 @@ export const paymentMethods = {
 }
 
 export function Cart() {
+  const { cartItems } = useCart()
+
   return (
     <CartForm>
       <LeftCartContainer>
@@ -87,16 +90,9 @@ export function Cart() {
         <TitleM>Cafés selecionados</TitleM>
         <div>
           <CartCoffeeListContainer>
-            <CartCoffeeCard
-              name="Expresso Americano"
-              img={'/coffees/' + 'americano.svg'}
-              price={9.9}
-            />
-            <CartCoffeeCard
-              name="Café com leite"
-              img={'/coffees/' + 'com-leite.svg'}
-              price={9.9}
-            />
+            {cartItems.map((coffee) => (
+              <CartCoffeeCard key={coffee.id} coffee={coffee} />
+            ))}
           </CartCoffeeListContainer>
           <ConfirmationContainer>
             <div>

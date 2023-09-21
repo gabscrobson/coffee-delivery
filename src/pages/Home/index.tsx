@@ -60,14 +60,7 @@ export function Home() {
         <TitleL>Nossos cafés</TitleL>
         <CoffeeList>
           {coffees.map((coffee) => (
-            <CoffeeCard
-              key={coffee.id}
-              name={coffee.name}
-              description={coffee.description}
-              img={'/coffees/' + coffee.photo}
-              price={coffee.price}
-              tags={coffee.tags}
-            />
+            <CoffeeCard key={coffee.id} coffee={coffee} />
           ))}
         </CoffeeList>
       </CoffeeListContainer>

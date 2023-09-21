@@ -8,45 +8,60 @@ import {
   PriceContainer,
   TagContainer,
 } from './styles'
+import { Coffee } from '../../../contexts/CartContext'
+import { useCart } from '../../../hooks/useCart'
+import { useState } from 'react'
 
 interface CoffeeCardProps {
-  img: string
-  name: string
-  description: string
-  tags: string[]
-  price: number
+  coffee: Coffee
 }
 
-export function CoffeeCard({
-  img,
-  name,
-  description,
-  tags,
-  price,
-}: CoffeeCardProps) {
+export function CoffeeCard({ coffee }: CoffeeCardProps) {
+  const [quantity, setQuantity] = useState(1)
+  const { addCoffeeToCart } = useCart()
+
+  function handleIncreaseQuantity() {
+    setQuantity(quantity + 1)
+  }
+
+  function handleDecreaseQuantity() {
+    if (quantity > 1) {
+      setQuantity(quantity - 1)
+    }
+  }
+
+  function handleAddCoffeeToCart() {
+    addCoffeeToCart({ ...coffee, quantity })
+    setQuantity(1)
+  }
+
   return (
     <CoffeeCardContainer>
-      <img src={img} alt={name} />
+      <img src={`/coffees/${coffee.photo}`} alt={coffee.name} />
       <div>
-        {tags.map((tag) => (
+        {coffee.tags.map((tag) => (
           <TagContainer key={tag}>{tag.toUpperCase()}</TagContainer>
         ))}
       </div>
-      <TitleM>{name}</TitleM>
-      <TextM>{description}</TextM>
+      <TitleM>{coffee.name}</TitleM>
+      <TextM>{coffee.description}</TextM>
       <CardFooterContainer>
         <PriceContainer>
           <TextM2>R$</TextM2>
           <TitleL>
-            {price.toLocaleString('pt-BR', {
+            {coffee.price.toLocaleString('pt-BR', {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}
           </TitleL>
         </PriceContainer>
         <AddToCartContainer>
-          <QuantityInput />
-          <button>
+          <QuantityInput
+            quantity={quantity}
+            onIncrease={handleIncreaseQuantity}
+            onDecrease={handleDecreaseQuantity}
+          />
+          <button onClick={handleAddCoffeeToCart}>
             <ShoppingCart size={22} weight="fill" />
           </button>
         </AddToCartContainer>
