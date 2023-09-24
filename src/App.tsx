@@ -6,6 +6,9 @@ import { Router } from './Router'
 import { BrowserRouter } from 'react-router-dom'
 import { CartContextProvider } from './contexts/CartContext'
 
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -15,6 +18,7 @@ export function App() {
         </CartContextProvider>
       </BrowserRouter>
       <GlobalStyle />
+      <ToastContainer />
     </ThemeProvider>
   )
 }

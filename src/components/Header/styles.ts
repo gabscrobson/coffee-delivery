@@ -66,6 +66,10 @@ const BaseRightButton = styled.div`
 export const LocationButton = styled(BaseRightButton)`
   background-color: ${(props) => props.theme.purpleLight};
   color: ${(props) => props.theme.purple};
+
+  @media (max-width: 500px) {
+    display: none;
+  }
 `
 
 export const CartButton = styled(BaseRightButton)`

@@ -9,8 +9,8 @@ export const QualityContainer = styled.div`
 
 export const IconContainer = styled.div<{ color: string; size: string }>`
   color: white;
-  width: ${(props) => props.size};
-  height: ${(props) => props.size};
+  min-width: ${(props) => props.size} !important;
+  min-height: ${(props) => props.size} !important;
   border-radius: 50%;
   background-color: ${(props) => props.color};
 

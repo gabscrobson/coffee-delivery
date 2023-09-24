@@ -44,11 +44,12 @@ export const LeftCartContainer = styled(RightCartContainer)`
 
 interface TextInputProps {
   maxWidth?: number
+  borderColor?: string
 }
 
 export const TextInput = styled.input<TextInputProps>`
   background: ${(props) => props.theme.baseInput};
-  border: 2px solid ${(props) => props.theme.baseButton};
+  border: 2px solid ${(props) => props.borderColor || props.theme.baseButton};
   border-radius: 6px;
   padding: 0.7rem;
   margin: 0 1rem 1rem 0;
@@ -58,7 +59,7 @@ export const TextInput = styled.input<TextInputProps>`
   outline: none;
 
   &:focus {
-    border: 2px solid ${(props) => props.theme.yellow};
+    border: 2px solid ${(props) => props.borderColor || props.theme.yellow};
   }
 `
 
@@ -117,4 +118,12 @@ export const ConfirmationContainer = styled.div`
       background: ${(props) => props.theme.yellowDark};
     }
   }
+`
+
+export const ErrorMessage = styled.span`
+  color: ${(props) => props.theme.red};
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  display: block;
 `

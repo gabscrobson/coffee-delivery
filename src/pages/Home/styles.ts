@@ -33,6 +33,11 @@ export const IntroInfoQualitiesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    margin-top: -3rem;
+  }
 `
 
 export const IntroImage = styled.img`

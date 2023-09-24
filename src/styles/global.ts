@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { defaultTheme } from './themes/default'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -36,5 +37,10 @@ export const GlobalStyle = createGlobalStyle`
   // Firefox 
   input[type=number] {
     -moz-appearance: textfield;
+  }
+
+  ::selection {
+    background: ${defaultTheme.yellowDark};
+    color: ${defaultTheme.white};
   }
 `

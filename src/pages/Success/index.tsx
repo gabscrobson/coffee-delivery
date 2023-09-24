@@ -7,8 +7,25 @@ import {
   SuccessInfoContainer,
 } from './styles'
 import { defaultTheme } from '../../styles/themes/default'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import { FormData } from '../Cart'
+
+interface LocationType {
+  state: FormData
+}
 
 export function Success() {
+  const { state } = useLocation() as LocationType
+  const { rua, numero, bairro, cidade, uf, pagamento } = state
+  const navigator = useNavigate()
+
+  useEffect(() => {
+    if (!state) {
+      navigator('/')
+    }
+  }, [state, navigator])
+
   return (
     <SuccessContainer>
       <LeftSuccessContainer>
@@ -21,8 +38,7 @@ export function Success() {
             color={defaultTheme.purple}
             size="small"
           >
-            Entrega em Rua João Daniel Martinelli, 102 Farrapos - Porto Alegre,
-            RS
+            Entrega em Rua {rua}, {numero} {bairro} - {cidade}, {uf}
           </Quality>
           <Quality
             icon={<Clock weight="fill" />}
@@ -36,7 +52,7 @@ export function Success() {
             color={defaultTheme.yellowDark}
             size="small"
           >
-            <b>Cartão de crédito</b>
+            <b>{pagamento}</b>
           </Quality>
         </SuccessInfoContainer>
       </LeftSuccessContainer>

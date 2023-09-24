@@ -1,3 +1,4 @@
+import { useFormContext } from 'react-hook-form'
 import { TextM3 } from '../../../styles/typography'
 import { PaymentContainer, PaymentLabel } from './styles'
 
@@ -8,9 +9,11 @@ interface PaymentProps {
 }
 
 export function Payment({ id, method, icon }: PaymentProps) {
+  const { register } = useFormContext()
+
   return (
     <PaymentContainer>
-      <input type="radio" name="payment" id={id} />
+      <input type="radio" id={id} value={method} {...register('pagamento')} />
       <PaymentLabel htmlFor={id}>
         {icon}
         <TextM3>{method}</TextM3>
