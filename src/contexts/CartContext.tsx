@@ -18,6 +18,7 @@ interface CartContextType {
   addCoffeeToCart: (coffee: CartItem) => void
   changeCoffeeQuantity: (coffee: CartItem, quantity: number) => void
   removeCoffeeFromCart: (coffee: CartItem) => void
+  clearCart: () => void
 }
 
 interface CartContextProviderProps {
@@ -49,6 +50,10 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     setCartItems(updatedCartItems)
   }
 
+  function clearCart() {
+    setCartItems([])
+  }
+
   function changeCoffeeQuantity(coffee: CartItem, quantity: number) {
     const updatedCartItems = cartItems.map((item) =>
       item.id === coffee.id ? { ...coffee, quantity } : item,
@@ -62,6 +67,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     addCoffeeToCart,
     changeCoffeeQuantity,
     removeCoffeeFromCart,
+    clearCart,
   }
 
   return (

@@ -11,6 +11,7 @@ import {
 import { Coffee } from '../../../contexts/CartContext'
 import { useCart } from '../../../hooks/useCart'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 interface CoffeeCardProps {
   coffee: Coffee
@@ -33,6 +34,16 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
   function handleAddCoffeeToCart() {
     addCoffeeToCart({ ...coffee, quantity })
     setQuantity(1)
+    toast('☕ Café adicionado ao carrinho!', {
+      position: 'top-center',
+      autoClose: 500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      progress: undefined,
+      theme: 'light',
+    })
   }
 
   return (

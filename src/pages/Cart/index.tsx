@@ -47,7 +47,7 @@ export type FormData = {
 }
 
 export function Cart() {
-  const { cartItems } = useCart()
+  const { cartItems, clearCart } = useCart()
   const subTotal = cartItems.reduce((acc, coffee) => acc + coffee.price, 0)
   const deliveryFee = 3.5
   const total = subTotal + deliveryFee
@@ -77,6 +77,7 @@ export function Cart() {
     navigator('/success', {
       state: data,
     })
+    clearCart()
   }
 
   function showErrorMessage() {
